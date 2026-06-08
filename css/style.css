@@ -1,0 +1,138 @@
+:root {
+  --bg-dark: #003240;
+  --bg-darker: #00617e;
+  --text-color: whitesmoke;
+  --font-main: "Figtree", sans-serif;
+  --b-rad-small: 16px;
+  --b-rad-big: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-dark);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+/* Header */
+.site-header {
+  background-color: var(--bg-darker);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.gallery-item {
+  border-radius: var(--b-rad-small);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Dialog */
+.dialog {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.dialog-inner {
+  background-color: var(--bg-darker);
+  border-radius: var(--b-rad-big);
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  position: relative;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.dialog-figure {
+  border-radius: var(--b-rad-small);
+}
+
+.dialog-figure img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--b-rad-small);
+}
+
+.dialog-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.d-none {
+  display: none !important;
+}

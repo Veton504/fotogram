@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fotogram</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="init()">
+    <header class="site-header">
+      <div class="header-logo">
+        <span class="logo-icon" aria-hidden="true">📷</span>
+        <span class="logo-text">Fotogram</span>
+      </div>
+    </header>
+
+    <section class="hero">
+  <h1>Your personal photo album</h1>
+</section>
+
+    <main id="main"></main>
+
+    <div
+      id="dialog"
+      class="dialog d-none"
+      onclick="closeDetail()"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Bilddetailansicht"
+    >
+      <div class="dialog-inner" onclick="event.stopPropagation()">
+        <button
+          class="dialog-close"
+          onclick="closeDetail()"
+          aria-label="Schließen"
+        >
+          ✕
+        </button>
+        <figure class="dialog-figure">
+          <img id="dialog-img" src="" alt="" />
+          <figcaption id="dialog-caption"></figcaption>
+        </figure>
+        <div class="dialog-nav">
+          <button
+            id="btn-prev"
+            onclick="navigate(-1)"
+            aria-label="Vorheriges Bild"
+          >
+            ←
+          </button>
+          <span id="dialog-counter"></span>
+          <button
+            id="btn-next"
+            onclick="navigate(1)"
+            aria-label="Nächstes Bild"
+          >
+            →
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
