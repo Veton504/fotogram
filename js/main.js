@@ -39,7 +39,7 @@ function renderThumbnail(index) {
   return `
     <div class="gallery-item" onclick="openDetail(${index})">
       <img src="images/${IMAGES[index]}" 
-           alt="Foto ${index + 1}" />
+           alt="Photo ${index + 1}" />
     </div>
   `;
 }
@@ -47,15 +47,16 @@ function renderThumbnail(index) {
 function openDetail(index) {
   currentIndex = index;
   DIALOG_IMG.src = `images/${IMAGES[currentIndex]}`;
-  DIALOG_IMG.alt = `Foto ${currentIndex + 1}`;
+  DIALOG_IMG.alt = `Photo ${currentIndex + 1}`;
   DIALOG_CAPTION.textContent = IMAGES[currentIndex];
   DIALOG_COUNTER.textContent = `${currentIndex + 1}/${IMAGES.length}`;
-  console.log("openDetail aufgerufen", index);
+  document.body.classList.add("no-scroll");
   DIALOG.classList.remove("d-none");
 }
 
 function closeDetail() {
   DIALOG.classList.add("d-none");
+  document.body.classList.remove("no-scroll");
 }
 
 function navigate(direction) {
@@ -66,5 +67,11 @@ function navigate(direction) {
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") {
     closeDetail();
+  }
+  if (event.key === "ArrowLeft") {
+    navigate(-1);
+  }
+  if (event.key === "ArrowRight") {
+    navigate(1);
   }
 });

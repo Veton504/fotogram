@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fotogram</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='32' font-size='32'>📷</text></svg>"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,17 +18,17 @@
   </head>
   <body onload="init()">
     <header class="site-header">
-      <div class="header-logo">
+      <div class="header-logo container">
         <span class="logo-icon" aria-hidden="true">📷</span>
         <span class="logo-text">Fotogram</span>
       </div>
     </header>
 
-    <section class="hero">
-  <h1>Your personal photo album</h1>
-</section>
+    <section class="hero container">
+      <h1>Your personal photo album</h1>
+    </section>
 
-    <main id="main"></main>
+    <main id="main" class="container"></main>
 
     <div
       id="dialog"
@@ -32,14 +36,10 @@
       onclick="closeDetail()"
       role="dialog"
       aria-modal="true"
-      aria-label="Bilddetailansicht"
+      aria-label="Image detail view"
     >
       <div class="dialog-inner" onclick="event.stopPropagation()">
-        <button
-          class="dialog-close"
-          onclick="closeDetail()"
-          aria-label="Schließen"
-        >
+        <button class="dialog-close" onclick="closeDetail()" aria-label="Close">
           ✕
         </button>
         <figure class="dialog-figure">
@@ -49,22 +49,30 @@
         <div class="dialog-nav">
           <button
             id="btn-prev"
+            class="nav-btn"
             onclick="navigate(-1)"
-            aria-label="Vorheriges Bild"
+            aria-label="Previous image"
           >
             ←
           </button>
           <span id="dialog-counter"></span>
           <button
             id="btn-next"
+            class="nav-btn"
             onclick="navigate(1)"
-            aria-label="Nächstes Bild"
+            aria-label="Next image"
           >
-            →
-          </button>
+          →
+        </button>
         </div>
       </div>
     </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2026 Fotogram</p>
+      </div>
+    </footer>
 
     <script src="js/main.js"></script>
   </body>
